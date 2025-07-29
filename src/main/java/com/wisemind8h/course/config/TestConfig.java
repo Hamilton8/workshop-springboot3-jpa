@@ -67,12 +67,13 @@ public class TestConfig implements CommandLineRunner{
 		
 		User u1 = new User(null, "Maria BROWN", "maria@gmail.com", "1234321", "12345");
 		User u2 = new User(null, "Alex Green", "alex@gmail.com", "12348765", "12345");
+		User elidio = new User(null, "Elidio Nuvunga","sozinho@gmail.com", "739656789", "12345" );
 		
 		Order o1 = new Order(null, Instant.parse("2019-06-20T19:53:07Z"),OrderStatus.PAID, u1);
 		Order o2 = new Order(null, Instant.parse("2019-07-21T03:42:10Z"), OrderStatus.WAITING_PAYMENT,u2);
 		Order o3 = new Order(null, Instant.parse("2019-07-22T15:21:22Z"), OrderStatus.WAITING_PAYMENT,u1);
 		
-		userRepository.saveAll(Arrays.asList(u1,u2));
+		userRepository.saveAll(Arrays.asList(u1,u2,elidio));
 		orderRepository.saveAll(Arrays.asList(o1,o2,o3));
 		
 	}
